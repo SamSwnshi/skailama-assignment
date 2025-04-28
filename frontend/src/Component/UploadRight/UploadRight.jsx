@@ -41,16 +41,27 @@ const UploadRight = () => {
 
     const handleUpload = async () => {
         try {
-            const response = await api.post('/api/youtube/create', formData);
+            const token = localStorage.getItem("token"); 
+            if (!token) {
+                alert("Token is missing. Please log in.");
+                return;
+            }
+            const response = await api.post('/api/youtube/create', formData, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+    
             console.log('Upload successful:', response.data);
             alert('Upload successful!');
             setUploadSuccess(true);
             handleModal();
         } catch (error) {
-            console.error('Upload failed:', error);
+            console.error('Upload failed:', error.response?.data || error.message);
             alert('Upload failed. Please try again.');
         }
     };
+    
 
     const handleChange = (e) => {
         const { name, value } = e.target;
