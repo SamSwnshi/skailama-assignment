@@ -28,7 +28,7 @@ const Register = () => {
             const response = await api.post("/api/register", { email, password });
             localStorage.setItem("token", response.data.token);
             setUser(response.data.user);
-            navigate("/login");
+            navigate("/");
         } catch (error) {
             console.error("Registration error:", error.response?.data || error.message);
             setError(error.response?.data?.message || "Invalid email or password. Please try again.");
