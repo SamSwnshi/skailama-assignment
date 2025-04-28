@@ -2,6 +2,7 @@
   display: flex;
   width: 100%;
   height: 100vh;
+  
 }
 .left {
   position: relative;
@@ -219,6 +220,7 @@ input::placeholder {
   .mainContainer {
     flex-direction: column;
     height: auto;
+    background: #F9F9F9;
   }
   .imageContainer {
     display: none;
@@ -233,9 +235,7 @@ input::placeholder {
     max-width: 100%;
   }
 
-  .imageContainer {
-    height: auto;
-  }
+  
 
   .data {
     display: flex;
