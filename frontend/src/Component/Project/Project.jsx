@@ -25,8 +25,11 @@ const Project = () => {
 
     const fetchProjects = async () => {
         try {
-            const response = await api.get("/api/projects/all");
-            alert("fetched all project list")
+            const response = await api.get("/api/projects/all", {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}` 
+                }
+            });
             setProjects(response.data);
             setProjectCount(response.data.length);
         } catch (error) {
@@ -46,11 +49,25 @@ const Project = () => {
         setLoading(true);
         setError("");
         setSuccess("");
-
+    
         try {
-            const response = await api.post("/api/project/create", { name: projectName });
+            const token = localStorage.getItem("token"); 
+            if (!token) {
+                setError("Token is missing. Please log in.");
+                return;
+            }
+    
+            const response = await api.post("/api/projects/create", 
+                { name: projectName }, 
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}` 
+                    }
+                }
+            );
+    
             if (response.status === 201 || response.status === 200) {
-                alert("Project created successfully")
+                alert("Project created successfully");
                 setSuccess("Project created successfully");
                 setProjectName("");
                 setModal(false);
@@ -66,6 +83,7 @@ const Project = () => {
             setLoading(false);
         }
     };
+    
     
     const routeToUpload = async() =>{
         navigate("/upload")
@@ -85,9 +103,10 @@ const Project = () => {
             {showProjects ? (
                 <div className={project.projectsSection} onClick={routeToUpload}>
                     <div className={project.projectsHeader}>
-                        <h1>Projects</h1>
-                        <button className={project.buttonTag} onClick={handleModal}>
-                            <img src={plus} alt="Addition" className={project.add} />Create New Project
+                        <h1 className={project.projectsHeading}>Projects</h1>
+                        <button className={project.buttonTagProject} onClick={handleModal}>
+                            <img src={plus} alt="Addition" className={project.add} />
+                            <span className={project.createProject}>Create New Project</span>
                         </button>
                     </div>
                     <div className={project.projectCountCard}>
