@@ -7,6 +7,7 @@ import logo2 from "../../assets/logo.png";
 import google from "../../assets/google.png";
 import api from "../../config/api";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from '../../context/user';
 
 const Home = () => {
   const [email, setEmail] = useState("");
@@ -14,7 +15,7 @@ const Home = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // const { setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -27,7 +28,7 @@ const Home = () => {
       localStorage.setItem("token", response.data.token);
       console.log("Login successful:", response.data);
       alert("Login successful!");
-      // setUser(response.data.user);
+      setUser(response.data.user);
       navigate("/projects");
     } catch (error) {
       setError("Invalid email or password. Please try again.");

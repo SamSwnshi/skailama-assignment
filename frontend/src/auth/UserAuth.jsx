@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { UserContext } from '../context/user.context';
+import { UserContext } from '../context/user';
 import { useNavigate } from 'react-router-dom';
 const Userauth = ({ children }) => {
     const { user } = useContext(UserContext);

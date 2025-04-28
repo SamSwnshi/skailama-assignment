@@ -26,7 +26,7 @@ const Project = () => {
     const fetchProjects = async () => {
         try {
             const response = await api.get("/api/projects/all");
-            // alert("fetched all project list")
+            alert("fetched all project list")
             setProjects(response.data);
             setProjectCount(response.data.length);
         } catch (error) {
@@ -48,7 +48,7 @@ const Project = () => {
         setSuccess("");
 
         try {
-            const response = await api.post("/api/projects/create", { name: projectName });
+            const response = await api.post("/api/project/create", { name: projectName });
             if (response.status === 201 || response.status === 200) {
                 alert("Project created successfully")
                 setSuccess("Project created successfully");
