@@ -5,7 +5,7 @@ import Home from "./Component/Home/Home"
 import Project from './Component/Project/Project';
 import Upload from './Component/Upload/Upload';
 import Register from "./Component/Register/Register";
-
+import Transcript from "./Component/Transcript/Transcript"
 
 function App() {
   
