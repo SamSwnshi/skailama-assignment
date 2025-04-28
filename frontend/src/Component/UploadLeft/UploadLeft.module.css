@@ -1,23 +1,35 @@
 
 .left {
-    width: 300px;
-    height: 87.7%;
+    width: 250px;
+    height: 100vh;
     gap: 50px;
     padding: 55px;
-    background-color: #f8f9fa;
+    color: black;
+    /* background-color: #f8f9fa; */
+    /* background-color: red; */
+  }
+  .leftContainer{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .leftContent {
+    width: 100%;
+    
     display: flex;
     flex-direction: column;
     align-items: start;
-    justify-content: space-around;
-    gap: 30px;
+    justify-content: space-between;
+    gap: 10px;
+    margin-left: 70px;
   }
   .leftData {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     gap: 20px;
+    color: gray;
   }
   .leftHelp {
     display: flex;
@@ -33,7 +45,7 @@
     width: 26px;
     height: 26px;
     margin-bottom: 10px;
-  
+    color: gray;
   }
   .leftIconsImage {
     width: 26px;
@@ -48,6 +60,7 @@
     flex-direction: column;
     align-items: start;
     justify-content: end;
+    margin-top: -50px;
   
   }
   .hrline {

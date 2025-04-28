@@ -101,8 +101,21 @@
   color: black;
 }
 
+.modalHeading{
+  font-weight: 600;
+}
+
+.modalLabel{
+  color: grey
+}
+
+.modalCancel{
+  background: transparent;
+}
+
 .inputModal{
   background: transparent;
+  color: black
 }
 
 .modalContent {

@@ -12,7 +12,7 @@ const UploadLeft = () => {
   return (
     <div>
        <div className={uploadLeft.left}>
-                <div>
+                <div className={uploadLeft.leftContainer}>
                     <div className={uploadLeft.leftImageDiv}>
                         <img src={icnos} alt="icon" className={uploadLeft.leftIcon} />
                     </div>

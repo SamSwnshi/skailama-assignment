@@ -111,9 +111,9 @@ const Project = () => {
             {modal && (
                 <div className={project.modalOverlay}>
                     <div className={project.modalContent}>
-                        <h1>Create Project</h1>
+                        <h1 className={project.modalHeading}>Create Project</h1>
                         <div className={project.inputData}>
-                            <label>Enter Project Name:</label>
+                            <label className={project.modalLabel}>Enter Project Name:</label>
                             <input
                                 type="text"
                                 placeholder="Type Here"
@@ -125,7 +125,7 @@ const Project = () => {
                             {success && <p className={project.success}>{success}</p>}
                         </div>
                         <div className={project.buttonDiv}>
-                            <button onClick={handleModal}>Cancel</button>
+                            <button onClick={handleModal} className={project.modalCancel}>Cancel</button>
                             <button
                                 onClick={handleProject}
                                 disabled={loading}
