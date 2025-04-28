@@ -11,7 +11,7 @@ const Register = () => {
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false); 
 
-    // const { setUser } = useContext(UserContext);
+    const { setUser } = useContext(UserContext);
     const navigate = useNavigate();
 
     const handleRegister = async (e) => {
