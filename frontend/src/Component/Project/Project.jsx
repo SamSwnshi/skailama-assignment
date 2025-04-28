@@ -103,7 +103,8 @@ const Project = () => {
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae impedit quibusdam quisquam quidem, excepturi deserunt maiores nostrum odio aspernatur veniam. Maiores excepturi inventore error a quaerat autem in magnam voluptate.
                     </p>
                     <button className={project.buttonTag} onClick={handleModal}>
-                        <img src={plus} alt="Addition" className={project.add} />Create New Project
+                        <img src={plus} alt="Addition" className={project.add} />
+                        <p className={project.create}>Create New Project</p>
                     </button>
                 </div>
             )}
@@ -118,6 +119,7 @@ const Project = () => {
                                 placeholder="Type Here"
                                 value={projectName}
                                 onChange={(e) => setProjectName(e.target.value)}
+                                className={project.inputModal}
                             />
                             {error && <p className={project.error}>{error}</p>}
                             {success && <p className={project.success}>{success}</p>}

@@ -27,7 +27,7 @@ const Home = () => {
       localStorage.setItem("token", response.data.token);
       console.log("Login successful:", response.data);
       alert("Login successful!");
-      setUser(response.data.user);
+      // setUser(response.data.user);
       navigate("/projects");
     } catch (error) {
       setError("Invalid email or password. Please try again.");
