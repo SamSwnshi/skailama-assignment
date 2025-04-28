@@ -54,7 +54,7 @@ const Transcript = () => {
 
     return (
         <div className={styles.container}>
-            <UploadLeft/>
+            <UploadLeft className={styles.leftSide}/>
 
             <div className={styles.mainContent}>
                 <div className={styles.headingHome}>

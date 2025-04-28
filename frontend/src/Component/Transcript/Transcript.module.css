@@ -187,3 +187,18 @@
   height: 27px;
   cursor: pointer;
 }
+@media  (max-width: 1200px) {
+  .leftSide{
+    display: hidden;
+  }
+}
+@media  (max-width: 768px) {
+  .leftSide{
+    display: hidden;
+  }
+}
+@media  (max-width: 1300px) {
+  .leftSide{
+    display: hidden;
+  }
+}
